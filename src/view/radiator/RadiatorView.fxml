@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.radiator.RadiatorViewController">
+   <children>
+      <ProgressBar fx:id="powerStateBar" layoutX="337.0" layoutY="151.0" prefHeight="59.0" prefWidth="206.0" progress="0.0" rotate="270.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="77.0" mnemonicParsing="false" onAction="#onTurnUpButton" prefHeight="75.0" prefWidth="164.0" text="Turn Up" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="248.0" mnemonicParsing="false" onAction="#onTurnDownButton" prefHeight="75.0" prefWidth="164.0" text="Turn Down" />
+      <Label fx:id="powerState" alignment="CENTER" contentDisplay="RIGHT" layoutX="411.0" layoutY="294.0" prefHeight="29.0" prefWidth="59.0" text="Label" />
+   </children>
+</AnchorPane>
