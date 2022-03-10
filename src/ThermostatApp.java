@@ -9,7 +9,6 @@ public class ThermostatApp extends Application
 {
   @Override public void start(Stage stage) throws Exception
   {
-  //test
     ModelFactory mf = new ModelFactory();
     Thermometer thermometer1 = new Thermometer(mf.getTemperatureModel(), "t1",0,5);
     Thermometer thermometer2 = new Thermometer(mf.getTemperatureModel(), "t2",0,3);
