@@ -78,6 +78,7 @@ public class Thermometer implements Runnable, PropertyChangeListener
         }
         catch (InterruptedException e)
         {
+          break;
         }
       } else {
         t0=externalTemperature(t0,-5,20);
@@ -89,6 +90,7 @@ public class Thermometer implements Runnable, PropertyChangeListener
         }
         catch (InterruptedException e)
         {
+          break;
         }
       }
     }

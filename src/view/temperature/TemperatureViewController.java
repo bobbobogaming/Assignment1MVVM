@@ -31,8 +31,8 @@ public class TemperatureViewController
 
   private TemperatureViewModel viewModel;
 
-  private XYChart.Data t1Data[] = new XYChart.Data[5];
-  private XYChart.Data t2Data[] = new XYChart.Data[5];
+  private XYChart.Data[] t1Data = new XYChart.Data[10];
+  private XYChart.Data[] t2Data = new XYChart.Data[10];
 
 
   public void init(TemperatureViewModel temperatureViewModel){

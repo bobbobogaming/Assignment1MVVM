@@ -14,28 +14,12 @@ import java.beans.PropertyChangeListener;
 
 public class TemperatureViewModel implements PropertyChangeListener
 {
-  private DoubleProperty t1Temperatures[];
-  private DoubleProperty t2Temperatures[];
+  private DoubleProperty[] t1Temperatures;
+  private DoubleProperty[] t2Temperatures;
   private StringProperty t0;
   private StringProperty t1Warning;
   private StringProperty t2Warning;
   private TemperatureModel model;
-
-  public void getLastTemp(){
-    Temperature temp = model.getLastTemperature("t1");
-    for (int i = 0; i < t1Temperatures.length-1; i++)
-    {
-      t1Temperatures[i].setValue(t1Temperatures[i+1].getValue());
-    }
-    t1Temperatures[t1Temperatures.length-1].setValue(temp.getTemp());
-
-    Temperature temp2 = model.getLastTemperature("t2");
-    for (int j = 0; j < t2Temperatures.length-1; j++)
-    {
-      t2Temperatures[j].setValue(t2Temperatures[j+1].getValue());
-    }
-    t2Temperatures[t2Temperatures.length-1].setValue(temp2.getTemp());
-  }
 
   public void defineMinMax(int min, int max){
     model.defineMinMax(min, max);
@@ -88,13 +72,13 @@ public class TemperatureViewModel implements PropertyChangeListener
   public TemperatureViewModel(TemperatureModel model)
   {
     this.model = model;
-    t1Temperatures = new DoubleProperty[5];
+    t1Temperatures = new DoubleProperty[10];
     for (int i = 0; i < t1Temperatures.length; i++)
     {
       t1Temperatures[i] = new SimpleDoubleProperty();
     }
 
-    t2Temperatures = new DoubleProperty[5];
+    t2Temperatures = new DoubleProperty[10];
     for (int j = 0; j < t2Temperatures.length; j++)
     {
       t2Temperatures[j] = new SimpleDoubleProperty();
