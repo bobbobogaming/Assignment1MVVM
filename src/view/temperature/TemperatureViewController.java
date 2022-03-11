@@ -16,6 +16,8 @@ public class TemperatureViewController
   @FXML
   Label t2Label;
 
+  @FXML Label t0Label;
+
   @FXML Label t1Warning;
   @FXML Label t2Warning;
 
@@ -45,6 +47,8 @@ public class TemperatureViewController
       t2Data[i] = new XYChart.Data(i+"",0);
       t2Data[i].YValueProperty().bind(viewModel.t2TemperatureProperties()[i]);
     }
+
+    t0Label.textProperty().bind(viewModel.t0Property());
 
     XYChart.Series series= new XYChart.Series();
     series.getData().addAll(t1Data);

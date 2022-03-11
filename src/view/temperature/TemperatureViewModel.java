@@ -16,6 +16,7 @@ public class TemperatureViewModel implements PropertyChangeListener
 {
   private DoubleProperty t1Temperatures[];
   private DoubleProperty t2Temperatures[];
+  private StringProperty t0;
   private StringProperty t1Warning;
   private StringProperty t2Warning;
   private TemperatureModel model;
@@ -58,7 +59,8 @@ public class TemperatureViewModel implements PropertyChangeListener
             t2Temperatures[j].setValue(t2Temperatures[j+1].getValue());
           }
           t2Temperatures[t2Temperatures.length-1].setValue(temp2.getTemp());
-        }
+        } else if (((Temperature)evt.getNewValue()).getId().equals("t0"))
+          t0.setValue(String.format("t0: %5.5f",model.getLastTemperature("t0").getTemp()));
       }
 
       if (evt.getPropertyName().equalsIgnoreCase("max")){
@@ -98,6 +100,8 @@ public class TemperatureViewModel implements PropertyChangeListener
       t2Temperatures[j] = new SimpleDoubleProperty();
     }
 
+    t0 = new SimpleStringProperty();
+
     t1Warning = new SimpleStringProperty();
     t2Warning = new SimpleStringProperty();
 
@@ -112,6 +116,11 @@ public class TemperatureViewModel implements PropertyChangeListener
   public DoubleProperty[] t2TemperatureProperties()
   {
     return t2Temperatures;
+  }
+
+  public StringProperty t0Property()
+  {
+    return t0;
   }
 
   public StringProperty t1WarningProperty()

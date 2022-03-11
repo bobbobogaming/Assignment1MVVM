@@ -51,6 +51,10 @@
    <center>
       <VBox alignment="BOTTOM_CENTER" spacing="50.0" BorderPane.alignment="BOTTOM_CENTER">
          <children>
+            <Label fx:id="t0Label" text="t0">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label text="Max" />
             <TextField fx:id="maxField" />
             <Label text="Min" />
