@@ -22,6 +22,4 @@ public class ModelFactory
 
     return radiatorModel;
   }
-
-
 }
