@@ -9,7 +9,7 @@ import view.main.TabViewController;
 import java.io.IOException;
 
 public class ViewHandler
-{
+{//ddd
   private Scene currentScene;
   private Stage currentStage;
   private ViewModelFactory viewModelFactory;
